@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>Understanding Closures</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+	<script>
+
+		function MathSample()
+		{
+			this.storage = [];
+			for(var i = 0; i < 10; i ++)
+			{
+				this.storage[i] = function() 
+				{
+					console.log(i);
+				}
+			}
+			i = 50;
+		}
+
+		var math = new MathSample();
+
+		for (var j = 0; j < 10; j++)
+		{
+			math.storage[j]();
+		}
+	</script>
+
+</body>
